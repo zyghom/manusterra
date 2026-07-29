@@ -9,8 +9,7 @@ function PageHome({ setRoute, onMecene, tweaks }) {
       <HeroBanner />
       <DemarcheSection />
       <TerrainSection />
-      <PartenaireSection setRoute={setRoute} onMecene={onMecene} />
-      <ContributionsSection />
+      {/* Sections partenaire et contributions désactivées */}
       <FamilleSection />
       <SuivreSection />
       <ContactCTASection setRoute={setRoute} onMecene={onMecene} />
@@ -94,7 +93,7 @@ function HeroSection({ onMecene, setRoute }) {
 
       <div className="wrap" style={{ textAlign: "center", maxWidth: 1100, position: "relative" }}>
         <div className="kicker hero-on-photo" style={{ justifyContent: "center", marginBottom: 26 }}>
-          Association loi 1901 — fondée en 2026
+          Association loi 1901 — n°RNA : W382012107
         </div>
 
         <div className="serif" style={{
@@ -127,11 +126,11 @@ function HeroSection({ onMecene, setRoute }) {
         </p>
 
         <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-          <button className="btn btn-on-photo-primary" onClick={onMecene} style={{ backgroundColor: "rgb(200, 94, 55)" }}>
-            Devenir mécène <span className="btn-arrow"></span>
+          <button className="btn btn-on-photo-primary" onClick={() => setRoute("projet")} style={{ backgroundColor: "rgb(200, 94, 55)" }}>
+            Découvrir la démarche <span className="btn-arrow"></span>
           </button>
-          <button className="btn btn-on-photo-ghost" onClick={() => setRoute("projet")}>
-            Découvrir la démarche
+          <button className="btn btn-on-photo-ghost" onClick={() => setRoute("contact")}>
+            Nous contacter
           </button>
         </div>
       </div>
@@ -552,7 +551,7 @@ function FamilleSection() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 40 }}>
           {people.map((p, i) =>
           <Reveal key={p.nm} delay={i * 100}>
-              <Photo ratio="4 / 5" tag={`Portrait · 0${i + 1}`} caption={p.nm} location="Bourgoin-Jallieu" />
+              <Photo ratio="4 / 5" tag={`Portrait · 0${i + 1}`} caption={p.nm} location="La Tour-du-Pin" />
               <h4 className="serif" style={{ fontSize: 24, fontWeight: 400, margin: "22px 0 4px" }}>{p.nm}</h4>
               <div className="eyebrow" style={{ marginBottom: 14 }}>{p.role}</div>
               <p style={{ fontSize: 14.5, margin: 0 }}>{p.txt}</p>
@@ -639,16 +638,13 @@ function ContactCTASection({ setRoute, onMecene }) {
         </Reveal>
         <Reveal delay={140}>
           <p style={{ fontSize: 16, maxWidth: 560, margin: "0 auto 36px" }}>
-            Mécénat, presse, partenariat de terrain — écrivons-nous, sans engagement.
+            Question, partenariat, presse — écrivons-nous, sans engagement.
           </p>
         </Reveal>
         <Reveal delay={200}>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <button className="btn" onClick={onMecene}>
-              Devenir mécène <span className="btn-arrow"></span>
-            </button>
-            <button className="btn btn-ghost" onClick={() => setRoute("contact")}>
-              Nous écrire
+            <button className="btn" onClick={() => setRoute("contact")}>
+              Nous écrire <span className="btn-arrow"></span>
             </button>
           </div>
         </Reveal>

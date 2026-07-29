@@ -17,7 +17,7 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
           <Reveal delay={160}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 60, marginTop: 50 }}>
               <p style={{ fontSize: 18, lineHeight: 1.55, color: "var(--ink)", fontFamily: "var(--serif)", fontWeight: 300, margin: 0 }}>
-                Manus Terra est une association loi 1901 fondée en 2026,
+                Manus Terra est une association loi 1901 (n°RNA : W382012107) fondée en 2026,
                 portée par une famille qui part vivre en fourgon pour aller à la rencontre
                 des populations à l'échelle d'une famille, d'un village, d'une petite communauté.
               </p>
@@ -373,9 +373,19 @@ function ContributionsAddendum() {
 // CONTACT
 // ─────────────────────────────────────────────────────────────────────
 function PageContact({ setRoute }) {
-  const [form, setForm] = useState({ nom: "", email: "", type: "mecenat", msg: "" });
+  const [form, setForm] = useState({ nom: "", email: "", objet: "", msg: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSending(true);
+    const body = `Nom: ${form.nom}\nEmail: ${form.email}\nObjet: ${form.objet}\n\nMessage:\n${form.msg}`;
+    const mailto = `mailto:assomanusterra@gmail.com?subject=${encodeURIComponent(form.objet || "Contact via le site")}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    setTimeout(() => { setSending(false); setSent(true); }, 500);
+  };
 
   return (
     <>
@@ -409,12 +419,12 @@ function PageContact({ setRoute }) {
                   <p style={{ margin: "0 auto 30px", maxWidth: 420 }}>
                     Nous revenons vers vous à <strong style={{ color: "var(--ink)" }}>{form.email}</strong> sous 72 h ouvrées.
                   </p>
-                  <button className="btn btn-ghost" onClick={() => { setSent(false); setForm({ nom: "", email: "", type: "mecenat", msg: "" }); }}>
+                  <button className="btn btn-ghost" onClick={() => { setSent(false); setForm({ nom: "", email: "", objet: "", msg: "" }); }}>
                     Envoyer un autre message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+                <form onSubmit={handleSubmit}>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18, marginBottom: 18 }}>
                     <div>
                       <label className="lbl">Nom</label>
@@ -426,25 +436,8 @@ function PageContact({ setRoute }) {
                     </div>
                   </div>
 
-                  <label className="lbl">Type de demande</label>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, marginBottom: 22 }}>
-                    {[
-                      ["mecenat", "Mécénat"],
-                      ["partenariat", "Partenariat"],
-                      ["presse", "Presse"],
-                      ["autre", "Autre"],
-                    ].map(([k, lbl]) => (
-                      <button key={k} type="button" onClick={() => setForm({ ...form, type: k })}
-                        style={{
-                          padding: "12px 8px",
-                          border: "1px solid " + (form.type === k ? "var(--ink)" : "var(--rule)"),
-                          background: form.type === k ? "var(--ink)" : "transparent",
-                          color: form.type === k ? "var(--paper)" : "var(--ink-soft)",
-                          fontFamily: "var(--sans)", fontSize: 13,
-                          cursor: "pointer", borderRadius: 2,
-                        }}>{lbl}</button>
-                    ))}
-                  </div>
+                  <label className="lbl">Objet de la demande</label>
+                  <input className="input" type="text" required value={form.objet} onChange={set("objet")} placeholder="Ex : question sur le projet, partenariat, presse…" style={{ marginBottom: 22 }} />
 
                   <label className="lbl">Message</label>
                   <textarea className="ta" required value={form.msg} onChange={set("msg")}
@@ -471,7 +464,7 @@ function PageContact({ setRoute }) {
             <div>
               <div className="eyebrow" style={{ marginBottom: 16 }}>Nous joindre directement</div>
               <h3 className="serif" style={{ fontSize: 28, fontWeight: 400, margin: "0 0 30px" }}>
-                contact<wbr/>@manusterra.fr
+                assomanusterra<wbr/>@gmail.com
               </h3>
 
               <hr className="rule" style={{ marginBottom: 26 }} />
@@ -483,8 +476,8 @@ function PageContact({ setRoute }) {
 
               <div className="eyebrow" style={{ marginBottom: 8 }}>Siège social</div>
               <p style={{ margin: "0 0 26px", fontSize: 15.5, lineHeight: 1.55 }}>
-                20 rue Bellerive<br/>
-                38300 Bourgoin-Jallieu<br/>
+                6 chemin des Gélinottes<br/>
+                38110 La Tour-du-Pin<br/>
                 France
               </p>
 
@@ -492,7 +485,7 @@ function PageContact({ setRoute }) {
 
               <div className="eyebrow" style={{ marginBottom: 8 }}>Statut</div>
               <p style={{ margin: 0, fontSize: 14, color: "var(--ink-soft)" }}>
-                Association loi 1901 — n° W383013… <span className="mono" style={{ fontSize: 10.5, color: "var(--ink-mute)" }}>(en attente)</span><br/>
+                Association loi 1901 — n°RNA : W382012107<br/>
                 Déductibilité fiscale en cours de demande (rescrit).
               </p>
             </div>

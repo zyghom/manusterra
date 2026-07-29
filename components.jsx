@@ -102,8 +102,6 @@ function Nav({ route, setRoute, onMecene }) {
   const links = [
     { id: "home", label: "Accueil" },
     { id: "projet", label: "Le projet" },
-    { id: "partenaire", label: "Devenir partenaire" },
-    { id: "don", label: "Faire un don" },
     { id: "contact", label: "Contact" },
   ];
   const [menuOpen, setMenuOpen] = useState(false);
@@ -142,7 +140,7 @@ function Nav({ route, setRoute, onMecene }) {
               {l.label}
             </span>
           ))}
-          <button className="nav-cta" onClick={onMecene}>Devenir mécène</button>
+          {/* bouton mécène désactivé */}
         </div>
         <button
           className={"nav-toggle " + (menuOpen ? "open" : "")}
@@ -163,12 +161,7 @@ function Nav({ route, setRoute, onMecene }) {
             {l.label}
           </span>
         ))}
-        <button
-          className="btn ms-cta"
-          onClick={() => { setMenuOpen(false); onMecene(); }}
-        >
-          Devenir mécène <span className="btn-arrow"></span>
-        </button>
+        {/* bouton mécène désactivé */}
       </div>
     </nav>
   );
@@ -191,8 +184,6 @@ function Footer({ setRoute }) {
           <div className="eyebrow" style={{ marginBottom: 14 }}>Site</div>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10, fontSize: 13.5 }}>
             <li onClick={() => setRoute("projet")} style={{ cursor: "pointer" }}>Le projet</li>
-            <li onClick={() => setRoute("partenaire")} style={{ cursor: "pointer" }}>Devenir partenaire</li>
-            <li onClick={() => setRoute("don")} style={{ cursor: "pointer" }}>Faire un don</li>
             <li onClick={() => setRoute("contact")} style={{ cursor: "pointer" }}>Contact</li>
           </ul>
         </div>
@@ -208,18 +199,18 @@ function Footer({ setRoute }) {
         <div>
           <div className="eyebrow" style={{ marginBottom: 14 }}>Contact</div>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10, fontSize: 13.5 }}>
-            <li>contact@manusterra.fr</li>
+            <li>assomanusterra@gmail.com</li>
             <li>+33 6 02 22 82 05</li>
-            <li style={{ color: "oklch(0.72 0.008 70)" }}>20 rue Bellerive<br/>38300 Bourgoin-Jallieu</li>
+            <li style={{ color: "oklch(0.72 0.008 70)" }}>6 chemin des Gélinottes<br/>38110 La Tour-du-Pin</li>
           </ul>
         </div>
       </div>
       <div className="wrap" style={{ marginTop: 56, paddingTop: 24, borderTop: "1px solid oklch(0.3 0.008 70)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12, fontFamily: "var(--mono)", fontSize: 11, color: "oklch(0.65 0.008 70)", letterSpacing: "0.06em" }}>
-        <span>© 2026 Manus Terra — Association loi 1901</span>
+        <span>© 2026 Manus Terra — Association loi 1901 — n°RNA : W382012107</span>
         <span style={{ display: "flex", gap: 22 }}>
-          <a href="#">Mentions légales</a>
-          <a href="#">Statuts (PDF)</a>
-          <a href="#">RGPD</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setRoute("mentions"); }}>Mentions légales</a>
+          <a href="assets/statuts-manus-terra.pdf" target="_blank" rel="noreferrer">Statuts (PDF)</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setRoute("rgpd"); }}>RGPD</a>
         </span>
       </div>
     </footer>

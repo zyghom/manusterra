@@ -28,6 +28,8 @@ function App() {
         {route === "partenaire" && <PagePartenaire setRoute={setRoute} onMecene={open} tweaks={tweaks} />}
         {route === "don" && <PageDon setRoute={setRoute} onMecene={open} tweaks={tweaks} />}
         {route === "contact" && <PageContact setRoute={setRoute} onMecene={open} tweaks={tweaks} />}
+        {route === "mentions" && <PageMentions setRoute={setRoute} />}
+        {route === "rgpd" && <PageRGPD setRoute={setRoute} />}
       </main>
       <Footer setRoute={setRoute} />
 
