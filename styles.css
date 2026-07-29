@@ -178,8 +178,13 @@ a { color: inherit; text-underline-offset: 3px; }
   color: var(--ink-mute);
 }
 .photo.photo-real {
-  background: oklch(0.18 0.008 70);
+  background: var(--paper-deep);
   border-color: transparent;
+}
+.photo.photo-real img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
 .photo .tag {
   position: absolute; left: 14px; top: 14px;
