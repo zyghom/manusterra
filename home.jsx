@@ -93,7 +93,7 @@ function HeroSection({ onMecene, setRoute }) {
 
       <div className="wrap" style={{ textAlign: "center", maxWidth: 1100, position: "relative" }}>
         <div className="kicker hero-on-photo" style={{ justifyContent: "center", marginBottom: 26 }}>
-          Association loi 1901 — n°RNA : W382012107
+          Association loi 1901
         </div>
 
         <div className="serif" style={{
@@ -633,7 +633,7 @@ function ContactCTASection({ setRoute, onMecene }) {
         <Reveal delay={200}>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <button className="btn" onClick={() => setRoute("contact")}>
-              Nous écrire <span className="btn-arrow"></span>
+              Nous contacter <span className="btn-arrow"></span>
             </button>
           </div>
         </Reveal>
