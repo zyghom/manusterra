@@ -474,13 +474,6 @@ function PageContact({ setRoute }) {
 
           <Reveal delay={120}>
             <div>
-              <div className="eyebrow" style={{ marginBottom: 16 }}>Email</div>
-              <h3 className="serif" style={{ fontSize: 28, fontWeight: 400, margin: "0 0 30px" }}>
-                assomanusterra<wbr/>@gmail.com
-              </h3>
-
-              <hr className="rule" style={{ marginBottom: 26 }} />
-
               <div className="eyebrow" style={{ marginBottom: 8 }}>Siège social</div>
               <p style={{ margin: "0 0 26px", fontSize: 15.5, lineHeight: 1.55 }}>
                 6 chemin des Gélinottes<br/>
