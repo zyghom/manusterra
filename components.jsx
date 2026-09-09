@@ -199,9 +199,7 @@ function Footer({ setRoute }) {
         <div>
           <div className="eyebrow" style={{ marginBottom: 14 }}>Contact</div>
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10, fontSize: 13.5 }}>
-            <li>assomanusterra@gmail.com</li>
-            <li>+33 6 02 22 82 05</li>
-            <li style={{ color: "oklch(0.72 0.008 70)" }}>6 chemin des Gélinottes<br/>38110 La Tour-du-Pin</li>
+            <li onClick={() => setRoute("contact")} style={{ cursor: "pointer" }}>Nous contacter</li>
           </ul>
         </div>
       </div>

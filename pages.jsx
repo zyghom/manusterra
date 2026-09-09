@@ -17,16 +17,27 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
           <Reveal delay={160}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 60, marginTop: 50 }}>
               <p style={{ fontSize: 18, lineHeight: 1.55, color: "var(--ink)", fontFamily: "var(--serif)", fontWeight: 300, margin: 0 }}>
-                Manus Terra est une association loi 1901 (n°RNA : W382012107) fondée en 2026,
-                portée par une famille qui part vivre en fourgon pour aller à la rencontre
+                Manus Terra est une association loi 1901 fondée en juillet 2026,
+                portée par une famille qui part vivre en base mobile pour aller à la rencontre
                 des populations à l'échelle d'une famille, d'un village, d'une petite communauté.
               </p>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
                 Le projet associatif formalise une pratique éprouvée depuis Djibouti et l'Éthiopie :
-                création du canyon de Mêdého référencé sur descente-canyon.com, cinéma itinérant
-                pour sensibiliser aux déchets, formation de guides reprise trois ans plus tard
-                par l'État djiboutien, intégration administrative d'une famille éthiopienne.
-                Une trajectoire, pas une promesse.
+                la mise en place d'un équipement de progression dans le canyon de Médéo (référencement sur descente-canyon.com),
+                la mise en place d'un cinéma itinérant à titre culturel pour la population locale n'ayant jamais vu de projection cinématographique,
+                lancement de guides officiels auprès de l'État djiboutien.
+                Ces actions ont été une trajectoire et non une promesse.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <div style={{ marginTop: 40, padding: "28px 32px", background: "var(--paper-deep)", border: "1px solid var(--rule)", borderLeft: "3px solid var(--terracotta)" }}>
+              <div className="eyebrow" style={{ marginBottom: 8, color: "var(--terracotta-d)" }}>Base mobile</div>
+              <p style={{ margin: 0, fontSize: 15, lineHeight: 1.65 }}>
+                Notre base mobile est un véhicule aménagé pour vivre et travailler sur le terrain en autonomie complète :
+                énergie solaire, réserves d'eau, espace de vie et de travail, matériel d'observation et de documentation.
+                Elle nous permet de nous installer au plus près des communautés, sans infrastructure lourde.
               </p>
             </div>
           </Reveal>
@@ -38,9 +49,9 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
           <Photo
             src="assets/photos/rencontre-village.jpg"
             ratio="21 / 9"
-            tag="Archives · Éthiopie"
+            tag="Archives · Djibouti"
             caption="Rencontre dans un hameau — région rurale"
-            location="Éthiopie · 2014"
+            location="Djibouti · 2007"
             focal="50% 40%"
           />
         </div>
@@ -59,10 +70,10 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
 
           <div style={{ display: "grid", gap: 0 }}>
             {[
-              { n: "01", t: "Une expérience qui transforme", lead: "On ne comprend pas le monde à distance.", b: "Au fil des années, nous avons vécu des expériences qui ont changé notre regard. Le terrain nous a appris ce qu'aucun rapport ne raconte : la lenteur, l'écoute, l'humilité." },
+              { n: "01", t: "Une expérience qui transforme", lead: "On ne comprend pas le monde à distance.", b: "Au fil des années, nous avons vécu des expériences qui ont changé notre regard. Le terrain nous a appris ce qu'aucun rapport ne raconte : la rencontre, l'écoute, l'humilité." },
               { n: "02", t: "Une aventure familiale", lead: "Comprendre avant d'agir.", b: "Nous sommes une famille engagée. Vivre ensemble cette aventure, c'est aussi tenir un engagement dans la durée — et le partager au-delà du foyer." },
-              { n: "03", t: "Une autre manière d'agir", lead: "Pas de réponses toutes faites.", b: "Nous arrivons en facilitateurs, jamais en sauveurs. Une solution se construit avec, jamais pour. Elle se nomme avec ceux qu'elle concerne, et elle peut attendre — avant d'être accompagnée." },
-              { n: "04", t: "Une route construite", lead: "2028 France · 2029 international.", b: "Une trajectoire posée : expérimenter d'abord, en France, dans une langue et un cadre connus. Déployer ensuite, ailleurs, avec une base solide et des partenaires identifiés." },
+              { n: "03", t: "Une autre manière d'agir", lead: "Pas de réponses toutes faites.", b: "Nous arrivons en facilitateurs, jamais en sauveurs. Une solution se construit avec, jamais pour. Elle se nomme avec ceux qu'elle concerne, et se construit — avant d'être accompagnée." },
+              { n: "04", t: "Une route construite", lead: "2028 France · 2029 / 2030 vers l'international.", b: "Une trajectoire posée : expérimenter d'abord, en France, dans une langue et un cadre connus. Déployer ensuite, ailleurs, avec une base solide et des partenaires identifiés." },
               { n: "05", t: "Une démarche partagée", lead: "Une histoire vécue.", b: "Nous souhaitons associer des partenaires — mécènes, entreprises, fondations — non pas comme financeurs invisibles, mais comme témoins et compagnons d'une histoire qui se vit." },
               { n: "06", t: "La naissance de Manus Terra", lead: "Main et terre, en latin.", b: "Le projet associatif formalise ce que nous faisions déjà. Une structure, des statuts, un cadre — pour rendre lisible et durable une pratique née sur le terrain." },
             ].map((bl, i) => (
@@ -127,7 +138,7 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
               ratio="4 / 3"
               tag="01 · Djibouti — Obock"
               caption="Canyon de Mêdého — descente-canyon.com"
-              location="2018-2021"
+              location="2007-2008"
               focal="50% 45%"
               tone="duotone"
             />
@@ -145,7 +156,7 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
                 src="assets/photos/soin-portrait.jpg"
                 ratio="16 / 10"
                 tag="03 · Éthiopie"
-                caption="Intégration administrative"
+                caption="Aide au dispensaire"
                 location="région rurale"
                 focal="40% 30%"
                 tone="duotone"
@@ -153,15 +164,6 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
             </div>
           </div>
 
-          <div style={{ marginTop: 40, padding: 28, borderTop: "1px solid var(--rule)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 20 }}>
-            <p style={{ margin: 0, maxWidth: 640 }}>
-              Le canyon de Mêdého, dans la région d'Obock, est aujourd'hui référencé sur descente-canyon.com.
-              Une idée de formation de guides née en 2018 a été reprise par l'État djiboutien en 2021.
-            </p>
-            <a className="btn btn-ghost" href="https://descente-canyon.com" target="_blank" rel="noreferrer">
-              Voir la fiche du canyon ↗
-            </a>
-          </div>
         </div>
       </section>
 
@@ -340,7 +342,7 @@ function ContributionsAddendum() {
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 0 }}>
           {[
-            { t: "Aménager", c: ["Fourgon (cellule, isolation, couchage)", "Énergie autonome (solaire, batterie)", "Réserves d'eau et de carburant", "Sécurité du véhicule"], n: "01" },
+            { t: "Aménager", c: ["Base mobile (cellule, isolation, couchage)", "Énergie autonome (solaire, batterie)", "Réserves d'eau et de carburant", "Sécurité du véhicule"], n: "01" },
             { t: "Vivre & travailler", c: ["Matériel d'observation terrain", "Photo, vidéo, audio", "Connectivité (satellite, GSM)", "Documentation et impression"], n: "02" },
             { t: "Soutenir sur place", c: ["Initiatives locales identifiées", "Matériel de sensibilisation", "Supports de transformation", "Frais de médiation"], n: "03" },
           ].map((b, i) => (
@@ -381,10 +383,21 @@ function PageContact({ setRoute }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSending(true);
-    const body = `Nom: ${form.nom}\nEmail: ${form.email}\nObjet: ${form.objet}\n\nMessage:\n${form.msg}`;
-    const mailto = `mailto:assomanusterra@gmail.com?subject=${encodeURIComponent(form.objet || "Contact via le site")}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setTimeout(() => { setSending(false); setSent(true); }, 500);
+    fetch("https://formsubmit.co/ajax/assomanusterra@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        name: form.nom,
+        email: form.email,
+        _subject: form.objet || "Contact via le site",
+        message: form.msg,
+        _captcha: "false",
+        _template: "table",
+      }),
+    })
+      .then((res) => res.json())
+      .then(() => { setSending(false); setSent(true); })
+      .catch(() => { setSending(false); alert("Erreur lors de l'envoi. Veuillez réessayer ou écrire directement à assomanusterra@gmail.com"); });
   };
 
   return (
@@ -394,13 +407,12 @@ function PageContact({ setRoute }) {
           <Reveal><div className="kicker" style={{ marginBottom: 24 }}>09 · Contact</div></Reveal>
           <Reveal delay={80}>
             <h1 className="display" style={{ fontSize: "clamp(56px, 8vw, 130px)", margin: "0 0 30px", maxWidth: 1200 }}>
-              Écrivons-<span className="italic-serif">nous</span>.
+              Contactez-<span className="italic-serif">nous</span>.
             </h1>
           </Reveal>
           <Reveal delay={140}>
             <p style={{ fontSize: 18, fontFamily: "var(--serif)", fontWeight: 300, maxWidth: 640, margin: 0, color: "var(--ink-soft)" }}>
-              Mécénat, presse, partenariat de terrain, simple curiosité — répondez en quelques lignes,
-              nous reviendrons vers vous personnellement.
+              Vous avez une question, une remarque ou toute autre chose, n'hésitez pas à nous contacter.
             </p>
           </Reveal>
         </div>
@@ -462,15 +474,10 @@ function PageContact({ setRoute }) {
 
           <Reveal delay={120}>
             <div>
-              <div className="eyebrow" style={{ marginBottom: 16 }}>Nous joindre directement</div>
+              <div className="eyebrow" style={{ marginBottom: 16 }}>Email</div>
               <h3 className="serif" style={{ fontSize: 28, fontWeight: 400, margin: "0 0 30px" }}>
                 assomanusterra<wbr/>@gmail.com
               </h3>
-
-              <hr className="rule" style={{ marginBottom: 26 }} />
-
-              <div className="eyebrow" style={{ marginBottom: 8 }}>Téléphone</div>
-              <p style={{ fontFamily: "var(--serif)", fontSize: 22, margin: "0 0 26px" }}>+33 6 02 22 82 05</p>
 
               <hr className="rule" style={{ marginBottom: 26 }} />
 
@@ -511,9 +518,9 @@ function FamilleMiniSection() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
             {[
-              ["Angie Rabilloud", "Président · Direction du projet, terrain"],
-              ["Medina Rabilloud", "Trésorière · Budget, logistique, mécénat"],
-              ["Frédéric Rossi", "Secrétaire · Communication, presse, récits"],
+              ["Angie Rabilloud", "Président · Responsable mécénat · Direction du projet, terrain"],
+              ["Medina Rabilloud", "Trésorière · Budget, logistique"],
+              ["Frédéric Rossi", "Secrétaire · Agent de presse · Communication, récits"],
             ].map(([nm, r]) => (
               <div key={nm}>
                 <h4 className="serif" style={{ fontSize: 18, fontWeight: 400, margin: "0 0 4px" }}>{nm}</h4>

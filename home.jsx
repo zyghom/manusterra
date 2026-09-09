@@ -167,7 +167,7 @@ function ProjetSection({ setRoute, timelineVariant }) {
   { num: "01", t: "Une expérience qui transforme", b: "Au fil des années, nous avons vécu des expériences… on ne comprend pas le monde à distance." },
   { num: "02", t: "Une aventure familiale", b: "Nous sommes une famille engagée… comprendre avant d'agir." },
   { num: "03", t: "Une autre manière d'agir", b: "Nous ne venons pas avec des réponses toutes faites… avant d'être accompagnée." },
-  { num: "04", t: "Une route construite", b: "2028 en France, 2029 à l'international — une trajectoire éprouvée pas à pas." },
+  { num: "04", t: "Une route construite", b: "2028 en France, 2029/2030 à l'international — une trajectoire éprouvée pas à pas." },
   { num: "05", t: "Une démarche partagée", b: "Nous souhaitons associer des partenaires… une histoire vécue." },
   { num: "06", t: "La naissance de Manus Terra", b: "Formaliser une pratique éprouvée depuis Djibouti et l'Éthiopie en une structure associative." }];
 
@@ -320,8 +320,8 @@ function TerrainSection() {
   const projets = [
   { tag: "01 · Djibouti", lieu: "Région d'Obock", titre: "Canyon de Mêdého", txt: "Création et référencement d'un canyon désormais ouvert aux descentes encadrées.", ratio: "4 / 5", ext: "https://descente-canyon.com", src: "assets/photos/enfant-jerricane.jpg", focal: "60% 40%" },
   { tag: "02 · Djibouti", lieu: "Villages reculés", titre: "Cinéma itinérant", txt: "Sensibiliser à la gestion des déchets, projection dans des hameaux sans accès à l'écrit.", ratio: "4 / 5", src: "assets/photos/cinema-itinerant.jpg", focal: "55% 40%" },
-  { tag: "03 · Djibouti", lieu: "État djiboutien", titre: "Formation de guides", txt: "Une idée de terrain reprise par l'État trois ans plus tard, formalisée en cursus officiel.", ratio: "4 / 5", src: "assets/photos/carte-nuit.jpg", focal: "50% 50%" },
-  { tag: "04 · Éthiopie", lieu: "Région rurale", titre: "Intégration administrative", txt: "Accompagnement d'une famille jusqu'à l'obtention de papiers d'identité.", ratio: "4 / 5", src: "assets/photos/soin-portrait.jpg", focal: "40% 30%" }];
+  { tag: "03 · Djibouti", lieu: "État djiboutien", titre: "Lancement de guides officiels", txt: "Une idée de terrain reprise par l'État trois ans plus tard, formalisée en cursus officiel.", ratio: "4 / 5", src: "assets/photos/carte-nuit.jpg", focal: "50% 50%" },
+  { tag: "04 · Éthiopie", lieu: "Région rurale", titre: "Aide au dispensaire", txt: "Soutien médical auprès d'un dispensaire en zone rurale.", ratio: "4 / 5", src: "assets/photos/soin-portrait.jpg", focal: "40% 30%" }];
 
   return (
     <section className="section">
@@ -345,17 +345,6 @@ function TerrainSection() {
           {projets.map((p, i) =>
           <Reveal key={p.titre} delay={i * 80}>
               <Photo ratio={p.ratio} tag={p.tag} caption={p.titre} location={p.lieu} src={p.src} focal={p.focal} tone="duotone" />
-              <h4 className="serif" style={{ fontSize: 20, fontWeight: 400, margin: "20px 0 8px", letterSpacing: "-0.005em" }}>
-                {p.titre}
-                {p.ext ?
-              <a href={p.ext} target="_blank" rel="noreferrer" style={{
-                marginLeft: 8, fontFamily: "var(--mono)", fontSize: 10,
-                letterSpacing: "0.12em", textTransform: "uppercase",
-                color: "var(--terracotta-d)", verticalAlign: "middle"
-              }}>↗ référencé</a> :
-              null}
-              </h4>
-              <p style={{ fontSize: 14, margin: 0 }}>{p.txt}</p>
             </Reveal>
           )}
         </div>
@@ -466,7 +455,7 @@ function ContributionsSection() {
   const cols = [
   {
     n: "01", t: "Besoins matériels", accent: "var(--terracotta)",
-    pts: ["Aménagement et équipement du fourgon", "Matériel d'autonomie et de vie nomade", "Matériel de terrain et d'observation", "Supports de sensibilisation et de transformation", "Équipement photo, vidéo et communication"]
+    pts: ["Aménagement et équipement de la base mobile", "Matériel d'autonomie et de vie nomade", "Matériel de terrain et d'observation", "Supports de sensibilisation et de transformation", "Équipement photo, vidéo et communication"]
   },
   {
     n: "02", t: "Besoins financiers", accent: "var(--ochre)",
@@ -526,9 +515,9 @@ function ContributionsSection() {
 // ── Famille ─────────────────────────────────────────────────────────
 function FamilleSection() {
   const people = [
-  { nm: "Angie Rabilloud", role: "Président · Fondateur du projet", txt: "Porteur du projet depuis ses premières aventures à Djibouti et en Éthiopie. Trace la route, ouvre les portes, formalise la démarche." },
+  { nm: "Angie Rabilloud", role: "Président · Responsable mécénat", txt: "Porteur du projet depuis ses premières aventures à Djibouti et en Éthiopie. Trace la route, ouvre les portes, formalise la démarche." },
   { nm: "Medina Rabilloud", role: "Trésorière", txt: "Tient le cap matériel et budgétaire du projet. Convertit l'élan en logistique tenable, jour après jour." },
-  { nm: "Frédéric Rossi", role: "Secrétaire", txt: "Garant de la mémoire, des récits et de la documentation. Relie ce qui se vit sur le terrain à ce qui en restera." }];
+  { nm: "Frédéric Rossi", role: "Secrétaire · Agent de presse", txt: "Garant de la mémoire, des récits et de la documentation. Relie ce qui se vit sur le terrain à ce qui en restera." }];
 
   return (
     <section className="section" style={{ background: "var(--paper-deep)" }}>
@@ -542,7 +531,7 @@ function FamilleSection() {
           </Reveal>
           <Reveal delay={120}>
             <p style={{ fontSize: 17, lineHeight: 1.6, margin: 0, alignSelf: "end", maxWidth: 480 }}>
-              Trois personnes, un fourgon, des années d'expérience de terrain et la volonté de continuer ensemble.
+              Trois personnes, une base mobile, des années d'expérience de terrain et la volonté de continuer ensemble.
               On ne porte pas un projet humanitaire seul ; on l'habite.
             </p>
           </Reveal>
@@ -638,7 +627,7 @@ function ContactCTASection({ setRoute, onMecene }) {
         </Reveal>
         <Reveal delay={140}>
           <p style={{ fontSize: 16, maxWidth: 560, margin: "0 auto 36px" }}>
-            Question, partenariat, presse — écrivons-nous, sans engagement.
+            Question, partenariat, presse — contactez-nous, sans engagement.
           </p>
         </Reveal>
         <Reveal delay={200}>

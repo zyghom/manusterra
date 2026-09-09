@@ -30,14 +30,14 @@ function TimelineHorizon() {
         <div style={{ paddingRight: 40, textAlign: "left", marginTop: 90, paddingLeft: "8%" }}>
           <div className="eyebrow" style={{ color: "var(--terracotta-d)", marginBottom: 10 }}>2028 · France</div>
           <h3 className="display" style={{ fontSize: 44, margin: "0 0 14px" }}>
-            Expérimenter <span className="italic-serif">la vie</span><br/>en fourgon
+            Expérimenter <span className="italic-serif">la vie</span><br/>en base mobile
           </h3>
           <p style={{ maxWidth: 380 }}>
             Ajuster notre organisation, consolider la démarche, éprouver le quotidien à plusieurs sur le terrain français.
           </p>
         </div>
         <div style={{ paddingLeft: 40, textAlign: "right", paddingRight: "8%" }}>
-          <div className="eyebrow" style={{ color: "var(--dust-blue-d)", marginBottom: 10, justifyContent: "flex-end" }}>2029 · International</div>
+          <div className="eyebrow" style={{ color: "var(--dust-blue-d)", marginBottom: 10, justifyContent: "flex-end" }}>2029-2030 · International</div>
           <h3 className="display" style={{ fontSize: 44, margin: "0 0 14px" }}>
             Déployer avec <span className="italic-serif">une base</span><br/>solide
           </h3>
@@ -75,7 +75,7 @@ function TimelineRoute() {
             En France
           </h3>
           <p style={{ fontSize: 14.5 }}>
-            Expérimenter la vie en fourgon, ajuster l'organisation, consolider la démarche sur le terrain français.
+            Expérimenter la vie en base mobile, ajuster l'organisation, consolider la démarche sur le terrain français.
           </p>
         </div>
         <div style={{ textAlign: "center", paddingTop: 130 }}>
@@ -86,7 +86,7 @@ function TimelineRoute() {
         </div>
         <div style={{ textAlign: "right" }}>
           <div className="eyebrow" style={{ color: "var(--dust-blue-d)", marginBottom: 10, justifyContent: "flex-end" }}>Étape · 02</div>
-          <div className="mono" style={{ fontSize: 12, color: "var(--ink-mute)", letterSpacing: "0.1em", marginBottom: 4 }}>2029</div>
+          <div className="mono" style={{ fontSize: 12, color: "var(--ink-mute)", letterSpacing: "0.1em", marginBottom: 4 }}>2029-2030</div>
           <h3 className="display" style={{ fontSize: 32, margin: "0 0 14px" }}>
             À l'international
           </h3>
@@ -103,9 +103,9 @@ function TimelineRoute() {
 function TimelineCompass() {
   const rows = [
     { year: "2026", title: "Naissance de l'association", note: "Statuts déposés, bureau constitué.", accent: "var(--ink)" },
-    { year: "2027", title: "Préparation", note: "Aménagement du fourgon, identification des premiers territoires, recherche de mécènes.", accent: "var(--ochre)" },
-    { year: "2028", title: "Expérimentation en France", note: "Vie nomade, immersion dans des villages, ajustement de la démarche.", accent: "var(--terracotta)" },
-    { year: "2029", title: "Déploiement international", note: "Premiers terrains hors France, dans le sillage de Djibouti et de l'Éthiopie.", accent: "var(--dust-blue)" },
+    { year: "2027", title: "Préparation", note: "Aménagement du base mobile, identification des premiers territoires, recherche de mécènes.", accent: "var(--ochre)" },
+    { year: "2028", title: "Expérimentation en France", note: "Déplacement, immersion dans des territoires isolés, ajustement de la démarche.", accent: "var(--terracotta)" },
+    { year: "2029-2030", title: "Déploiement international", note: "Premiers terrains hors France, dans le sillage de Djibouti et de l'Éthiopie.", accent: "var(--dust-blue)" },
   ];
   return (
     <div style={{ display: "grid", gap: 0, position: "relative", padding: "20px 0" }}>
