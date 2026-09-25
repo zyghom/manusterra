@@ -515,9 +515,9 @@ function ContributionsSection() {
 // ── Famille ─────────────────────────────────────────────────────────
 function FamilleSection() {
   const people = [
-  { nm: "Angie Rabilloud", role: "Président · Responsable mécénat", txt: "Porteur du projet depuis ses premières aventures à Djibouti et en Éthiopie. Trace la route, ouvre les portes, formalise la démarche." },
-  { nm: "Medina Rabilloud", role: "Trésorière", txt: "Tient le cap matériel et budgétaire du projet. Convertit l'élan en logistique tenable, jour après jour." },
-  { nm: "Frédéric Rossi", role: "Secrétaire · Agent de presse", txt: "Garant de la mémoire, des récits et de la documentation. Relie ce qui se vit sur le terrain à ce qui en restera." }];
+  { nm: "Angie Rabilloud", role: "Président · Responsable mécénat", txt: "Porteur du projet depuis ses premières aventures à Djibouti et en Éthiopie. Trace la route, ouvre les portes, formalise la démarche.", src: "assets/photos/portrait-angie.jpg", focal: "50% 30%" },
+  { nm: "Medina Rabilloud", role: "Trésorière", txt: "Tient le cap matériel et budgétaire du projet. Convertit l'élan en logistique tenable, jour après jour.", src: "assets/photos/portrait-medina.jpg", focal: "50% 30%" },
+  { nm: "Frédéric Rossi", role: "Secrétaire · Agent de presse", txt: "Garant de la mémoire, des récits et de la documentation. Relie ce qui se vit sur le terrain à ce qui en restera.", src: "assets/photos/portrait-fred.jpg", focal: "50% 30%" }];
 
   return (
     <section className="section" style={{ background: "var(--paper-deep)" }}>
@@ -540,7 +540,7 @@ function FamilleSection() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 40 }}>
           {people.map((p, i) =>
           <Reveal key={p.nm} delay={i * 100}>
-              <Photo ratio="4 / 5" tag={`Portrait · 0${i + 1}`} caption={p.nm} location="La Tour-du-Pin" />
+              <Photo ratio="4 / 5" tag={`Portrait · 0${i + 1}`} caption={p.nm} location="La Tour-du-Pin" src={p.src} focal={p.focal} />
               <h4 className="serif" style={{ fontSize: 24, fontWeight: 400, margin: "22px 0 4px" }}>{p.nm}</h4>
               <div className="eyebrow" style={{ marginBottom: 14 }}>{p.role}</div>
               <p style={{ fontSize: 14.5, margin: 0 }}>{p.txt}</p>

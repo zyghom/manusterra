@@ -511,11 +511,12 @@ function FamilleMiniSection() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
             {[
-              ["Angie Rabilloud", "Président · Responsable mécénat · Direction du projet, terrain"],
-              ["Medina Rabilloud", "Trésorière · Budget, logistique"],
-              ["Frédéric Rossi", "Secrétaire · Agent de presse · Communication, récits"],
-            ].map(([nm, r]) => (
+              ["Angie Rabilloud", "Président · Responsable mécénat · Direction du projet, terrain", "assets/photos/portrait-angie.jpg"],
+              ["Medina Rabilloud", "Trésorière · Budget, logistique", "assets/photos/portrait-medina.jpg"],
+              ["Frédéric Rossi", "Secrétaire · Agent de presse · Communication, récits", "assets/photos/portrait-fred.jpg"],
+            ].map(([nm, r, src]) => (
               <div key={nm}>
+                <Photo ratio="1 / 1" caption={nm} src={src} focal="50% 30%" style={{ marginBottom: 12 }} />
                 <h4 className="serif" style={{ fontSize: 18, fontWeight: 400, margin: "0 0 4px" }}>{nm}</h4>
                 <p style={{ fontSize: 13, color: "var(--ink-mute)", margin: 0, lineHeight: 1.5 }}>{r}</p>
               </div>
