@@ -485,6 +485,7 @@ function PageContact({ setRoute }) {
 
               <div className="eyebrow" style={{ marginBottom: 8 }}>Nous suivre</div>
               <p style={{ margin: "0 0 26px", fontSize: 15.5, lineHeight: 1.55, display: "flex", gap: 22, flexWrap: "wrap" }}>
+                <a href="https://www.instagram.com/assomanusterra/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--terracotta-d)" }}>Instagram ↗</a>
                 <a href="https://www.linkedin.com/company/association-manus-terra/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--terracotta-d)" }}>LinkedIn ↗</a>
                 <a href="https://www.facebook.com/profile.php?id=61595743671273" target="_blank" rel="noopener noreferrer" style={{ color: "var(--terracotta-d)" }}>Facebook ↗</a>
               </p>

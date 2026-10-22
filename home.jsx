@@ -567,7 +567,7 @@ function SuivreSection() {
             </h2>
             <p style={{ fontSize: 16, maxWidth: 460, margin: 0 }}>
               Récits, photos, étapes — recevez une lettre par saison, sans tapage.
-              Retrouvez-nous aussi sur LinkedIn et Facebook ; Instagram et YouTube suivront.
+              Retrouvez-nous aussi sur Instagram, LinkedIn et Facebook ; YouTube suivra.
             </p>
           </Reveal>
 
@@ -595,6 +595,7 @@ function SuivreSection() {
               <div className="eyebrow" style={{ marginBottom: 14 }}>Ailleurs</div>
               <div style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
                 {[
+                { name: "Instagram", href: "https://www.instagram.com/assomanusterra/" },
                 { name: "LinkedIn", href: "https://www.linkedin.com/company/association-manus-terra/" },
                 { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61595743671273" }].
                 map((r) =>
@@ -603,7 +604,7 @@ function SuivreSection() {
                     <span className="mono" style={{ fontSize: 9.5, letterSpacing: "0.1em" }}>↗</span>
                   </a>
                 )}
-                {["Instagram", "YouTube", "Twitch"].map((s) =>
+                {["YouTube", "Twitch"].map((s) =>
                 <span key={s} style={{ fontSize: 13, color: "var(--ink-soft)", display: "inline-flex", alignItems: "center", gap: 6 }}>
                     {s}
                     <span className="mono" style={{ fontSize: 9.5, color: "var(--ink-mute)", letterSpacing: "0.1em" }}>SOON</span>
