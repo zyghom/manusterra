@@ -483,6 +483,14 @@ function PageContact({ setRoute }) {
 
               <hr className="rule" style={{ marginBottom: 26 }} />
 
+              <div className="eyebrow" style={{ marginBottom: 8 }}>Nous suivre</div>
+              <p style={{ margin: "0 0 26px", fontSize: 15.5, lineHeight: 1.55, display: "flex", gap: 22, flexWrap: "wrap" }}>
+                <a href="https://www.linkedin.com/company/association-manus-terra/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--terracotta-d)" }}>LinkedIn ↗</a>
+                <a href="https://www.facebook.com/profile.php?id=61595743671273" target="_blank" rel="noopener noreferrer" style={{ color: "var(--terracotta-d)" }}>Facebook ↗</a>
+              </p>
+
+              <hr className="rule" style={{ marginBottom: 26 }} />
+
               <div className="eyebrow" style={{ marginBottom: 8 }}>Statut</div>
               <p style={{ margin: 0, fontSize: 14, color: "var(--ink-soft)" }}>
                 Association loi 1901 — n°RNA : W382012107<br/>

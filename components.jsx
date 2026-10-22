@@ -192,7 +192,8 @@ function Footer({ setRoute }) {
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 10, fontSize: 13.5 }}>
             <li>Instagram <span style={{ color: "oklch(0.55 0.008 70)", fontFamily: "var(--mono)", fontSize: 10, marginLeft: 6 }}>à venir</span></li>
             <li>YouTube <span style={{ color: "oklch(0.55 0.008 70)", fontFamily: "var(--mono)", fontSize: 10, marginLeft: 6 }}>à venir</span></li>
-            <li>LinkedIn <span style={{ color: "oklch(0.55 0.008 70)", fontFamily: "var(--mono)", fontSize: 10, marginLeft: 6 }}>à venir</span></li>
+            <li><a href="https://www.linkedin.com/company/association-manus-terra/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61595743671273" target="_blank" rel="noopener noreferrer">Facebook</a></li>
             <li>Newsletter</li>
           </ul>
         </div>
