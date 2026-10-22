@@ -567,7 +567,7 @@ function SuivreSection() {
             </h2>
             <p style={{ fontSize: 16, maxWidth: 460, margin: 0 }}>
               Récits, photos, étapes — recevez une lettre par saison, sans tapage.
-              Les réseaux suivront : Instagram, YouTube, LinkedIn, peut-être Twitch.
+              Retrouvez-nous aussi sur Instagram, LinkedIn et Facebook ; YouTube suivra.
             </p>
           </Reveal>
 
@@ -592,9 +592,19 @@ function SuivreSection() {
 
               <hr className="rule-dash" style={{ margin: "28px 0" }} />
 
-              <div className="eyebrow" style={{ marginBottom: 14 }}>Ailleurs (à venir)</div>
+              <div className="eyebrow" style={{ marginBottom: 14 }}>Ailleurs</div>
               <div style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
-                {["Instagram", "YouTube", "LinkedIn", "Twitch"].map((s) =>
+                {[
+                { name: "Instagram", href: "https://www.instagram.com/assomanusterra/" },
+                { name: "LinkedIn", href: "https://www.linkedin.com/company/association-manus-terra/" },
+                { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61595743671273" }].
+                map((r) =>
+                <a key={r.name} href={r.href} target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: "var(--terracotta-d)", display: "inline-flex", alignItems: "center", gap: 6, textDecoration: "none" }}>
+                    {r.name}
+                    <span className="mono" style={{ fontSize: 9.5, letterSpacing: "0.1em" }}>↗</span>
+                  </a>
+                )}
+                {["YouTube", "Twitch"].map((s) =>
                 <span key={s} style={{ fontSize: 13, color: "var(--ink-soft)", display: "inline-flex", alignItems: "center", gap: 6 }}>
                     {s}
                     <span className="mono" style={{ fontSize: 9.5, color: "var(--ink-mute)", letterSpacing: "0.1em" }}>SOON</span>
