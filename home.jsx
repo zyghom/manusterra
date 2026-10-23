@@ -556,6 +556,36 @@ function FamilleSection() {
 function SuivreSection() {
   const [email, setEmail] = useState("");
   const [ok, setOk] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
+
+  // Chaque inscription envoie une alerte par e-mail à l'association (FormSubmit, comme le formulaire de contact)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email || sending) return;
+    setSending(true);
+    setError(false);
+    fetch("https://formsubmit.co/ajax/assomanusterra@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        email,
+        inscription: "Newsletter — la lettre de saison",
+        _subject: "Nouvelle inscription à la newsletter",
+        _captcha: "false",
+        _template: "table",
+        _honey: e.target.elements._honey.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setSending(false);
+        if (data.success === false || data.success === "false") throw new Error(data.message);
+        setOk(true);
+      })
+      .catch(() => { setSending(false); setError(true); });
+  };
+
   return (
     <section className="section">
       <div className="wrap">
@@ -574,19 +604,24 @@ function SuivreSection() {
           <Reveal delay={120}>
             <div className="card" style={{ padding: 36 }}>
               <label className="lbl">La lettre — une fois par saison</label>
-              <div style={{ display: "flex", gap: 8 }}>
-                <input className="input" type="email" placeholder="prenom@exemple.fr" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <button className="btn" onClick={() => {if (email) setOk(true);}}>
-                  S'inscrire
+              <form onSubmit={handleSubmit} style={{ display: "flex", gap: 8 }}>
+                <input className="input" type="email" required placeholder="prenom@exemple.fr" value={email} onChange={(e) => setEmail(e.target.value)} disabled={ok} />
+                <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: "none" }} />
+                <button type="submit" className="btn" disabled={sending || ok}>
+                  {sending ? "Envoi…" : "S'inscrire"}
                 </button>
-              </div>
-              {ok ?
+              </form>
+              {error ?
+              <p className="mono" style={{ fontSize: 11, color: "var(--terracotta-d)", letterSpacing: "0.06em", marginTop: 16 }}>
+                  Échec de l'inscription — réessayez ou écrivez à assomanusterra@gmail.com
+                </p> :
+              ok ?
               <p className="mono" style={{ fontSize: 11, color: "var(--terracotta-d)", letterSpacing: "0.08em", marginTop: 16 }}>
                   ✓ MERCI — VOUS RECEVREZ LA PROCHAINE LETTRE
                 </p> :
 
               <p className="mono" style={{ fontSize: 10.5, color: "var(--ink-mute)", letterSpacing: "0.06em", marginTop: 16 }}>
-                  Pas de spam — conformité RGPD, désinscription en un clic.
+                  Pas de spam — votre e-mail sert uniquement à l'envoi de la lettre. Désinscription sur simple demande.
                 </p>
               }
 
