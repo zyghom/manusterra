@@ -14,6 +14,9 @@ function App() {
   // Scroll to top on route change
   useEffectA(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
+    // Vercel Web Analytics : une page vue par section (l'URL ne change pas)
+    const path = route === "home" ? "/" : "/" + route;
+    window.va && window.va("pageview", { route: path, path });
   }, [route]);
 
   const open = () => setMecOpen(true);
