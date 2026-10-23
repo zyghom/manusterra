@@ -2,6 +2,11 @@
 
 const { useState: useStateA, useEffect: useEffectA } = React;
 
+// Mode construction : true = page d'attente pour tous les visiteurs, false = site complet.
+// Même en mode construction, ajouter ?apercu à l'URL affiche le site complet.
+const MAINTENANCE = true;
+const APERCU = new URLSearchParams(window.location.search).has("apercu");
+
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "timeline": "compass"
 }/*EDITMODE-END*/;
@@ -55,4 +60,6 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  MAINTENANCE && !APERCU ? <PageMaintenance /> : <App />
+);
