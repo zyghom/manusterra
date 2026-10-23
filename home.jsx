@@ -322,6 +322,7 @@ function TerrainSection() {
   { tag: "02 · Djibouti", lieu: "Villages reculés", titre: "Cinéma itinérant", txt: "Sensibiliser à la gestion des déchets, projection dans des hameaux sans accès à l'écrit.", ratio: "4 / 5", src: "assets/photos/cinema-itinerant.jpg", focal: "55% 40%" },
   { tag: "03 · Djibouti", lieu: "État djiboutien", titre: "Lancement de guides officiels", txt: "Une idée de terrain reprise par l'État trois ans plus tard, formalisée en cursus officiel.", ratio: "4 / 5", src: "assets/photos/carte-nuit.jpg", focal: "50% 50%" },
   { tag: "04 · Éthiopie", lieu: "Région rurale", titre: "Aide au dispensaire", txt: "Soutien médical auprès d'un dispensaire en zone rurale.", ratio: "4 / 5", src: "assets/photos/soin-portrait.jpg", focal: "40% 30%" }];
+  const [lb, setLb] = useState(null);
 
   return (
     <section className="section">
@@ -344,10 +345,15 @@ function TerrainSection() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28 }}>
           {projets.map((p, i) =>
           <Reveal key={p.titre} delay={i * 80}>
-              <Photo ratio={p.ratio} tag={p.tag} caption={p.titre} location={p.lieu} src={p.src} focal={p.focal} tone="duotone" />
+              <button type="button" className="photo-open" onClick={() => setLb(i)}
+                aria-label={`Agrandir la photo « ${p.titre} » (${i + 1} sur ${projets.length})`}>
+                <Photo ratio={p.ratio} tag={p.tag} caption={p.titre} location={p.lieu} src={p.src} focal={p.focal} tone="duotone" />
+                <span className="photo-zoom" aria-hidden="true">+</span>
+              </button>
             </Reveal>
           )}
         </div>
+        <Lightbox items={projets} index={lb} onClose={() => setLb(null)} onIndex={setLb} />
       </div>
     </section>);
 
