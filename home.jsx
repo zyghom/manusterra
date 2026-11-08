@@ -26,7 +26,7 @@ function HeroBanner() {
           <Photo
             src="assets/photos/rencontre-mains.jpg"
             ratio="21 / 9"
-            tag="Terrain · Éthiopie"
+            tag="Archives"
             caption="La main, le geste, le seuil de la rencontre"
             location="archives 2019"
             focal="60% 50%"
@@ -516,7 +516,7 @@ function ContributionsSection() {
 // ── Famille ─────────────────────────────────────────────────────────
 function FamilleSection() {
   const people = [
-  { nm: "Angie Rabilloud", role: "Président · Responsable mécénat", txt: "Porteur du projet depuis ses premières aventures à Djibouti et en Éthiopie. Trace la route, ouvre les portes, formalise la démarche.", src: "assets/photos/portrait-angie.jpg", focal: "50% 30%" },
+  { nm: "Angie Rabilloud", role: "Président · Responsable mécénat", txt: "Porteur du projet depuis ses premières aventures à Djibouti. Trace la route, ouvre les portes, formalise la démarche.", src: "assets/photos/portrait-angie.jpg", focal: "50% 30%" },
   { nm: "Medina Rabilloud", role: "Trésorière", txt: "Tient le cap matériel et budgétaire du projet. Convertit l'élan en logistique tenable, jour après jour.", src: "assets/photos/portrait-medina.jpg", focal: "50% 30%" },
   { nm: "Frédéric Rossi", role: "Secrétaire · Agent de presse", txt: "Garant de la mémoire, des récits et de la documentation. Relie ce qui se vit sur le terrain à ce qui en restera.", src: "assets/photos/portrait-fred.jpg", focal: "50% 30%" }];
 
