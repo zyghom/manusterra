@@ -97,6 +97,99 @@ function Photo({ ratio = "1 / 1", tag, caption, location, src, alt, tone, focal,
   );
 }
 
+// ── Galerie / visionneuse ──────────────────────────────────────────
+// items: [{ src, titre, lieu, tag, txt, ext }] · index: image ouverte (null = fermée)
+function Lightbox({ items, index, onClose, onIndex }) {
+  const open = index !== null && index !== undefined;
+  const closeRef = useRef(null);
+  const dialogRef = useRef(null);
+  const touch = useRef(null);
+  const n = items.length;
+  const go = (d) => onIndex((index + d + n) % n);
+
+  // Clavier : Échap, flèches, focus piégé dans la visionneuse
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") { e.preventDefault(); onClose(); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+      else if (e.key === "Tab" && dialogRef.current) {
+        const f = dialogRef.current.querySelectorAll("button, a[href]");
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  });
+
+  // Bloque le scroll de la page, place le focus, le rend à l'ouvreur à la fermeture
+  useEffect(() => {
+    if (!open) return;
+    const opener = document.activeElement;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+    return () => { document.body.style.overflow = prev; opener?.focus?.(); };
+  }, [open]);
+
+  // Précharge les voisines pour une navigation sans attente
+  useEffect(() => {
+    if (!open) return;
+    [1, -1].forEach((d) => { const img = new Image(); img.src = items[(index + d + n) % n].src; });
+  }, [open, index]);
+
+  if (!open) return null;
+  const it = items[index];
+  const pad = (v) => String(v).padStart(2, "0");
+
+  const onTouchStart = (e) => { const t = e.touches[0]; touch.current = { x: t.clientX, y: t.clientY }; };
+  const onTouchEnd = (e) => {
+    if (!touch.current) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touch.current.x, dy = t.clientY - touch.current.y;
+    touch.current = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+  };
+
+  // Rendu dans <body> : un ancêtre animé (transform) casserait le position: fixed
+  return ReactDOM.createPortal(
+    <div className="lb-bd" onClick={onClose}>
+      <div className="lb" ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="lb-title"
+        onClick={(e) => e.stopPropagation()}>
+        <div className="lb-top">
+          <span className="lb-count" aria-live="polite">{pad(index + 1)} / {pad(n)}</span>
+          <button ref={closeRef} className="lb-btn lb-close" onClick={onClose} aria-label="Fermer la galerie">
+            <span aria-hidden="true">✕</span>
+          </button>
+        </div>
+
+        <figure className="lb-fig" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+          <img key={it.src} src={it.src} alt={it.titre + " — " + it.lieu} />
+        </figure>
+
+        <div className="lb-bar">
+          <button className="lb-btn" onClick={() => go(-1)} aria-label="Photo précédente">
+            <span aria-hidden="true">←</span>
+          </button>
+          <div className="lb-cap">
+            {it.tag ? <span className="lb-tag">{it.tag} · {it.lieu}</span> : null}
+            <h3 id="lb-title" className="display">{it.titre}</h3>
+            {it.txt ? <p>{it.txt}</p> : null}
+            {it.ext ? <a href={it.ext} target="_blank" rel="noopener noreferrer">{it.ext.replace(/^https?:\/\//, "")} ↗</a> : null}
+          </div>
+          <button className="lb-btn" onClick={() => go(1)} aria-label="Photo suivante">
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 // ── Navigation ─────────────────────────────────────────────────────
 function Nav({ route, setRoute, onMecene }) {
   const links = [
