@@ -26,7 +26,7 @@ function HeroBanner() {
           <Photo
             src="assets/photos/rencontre-mains.jpg"
             ratio="21 / 9"
-            tag="Terrain · Éthiopie"
+            tag="Archives"
             caption="La main, le geste, le seuil de la rencontre"
             location="archives 2019"
             focal="60% 50%"
@@ -165,11 +165,11 @@ function SignatureBand() {
 function ProjetSection({ setRoute, timelineVariant }) {
   const blocs = [
   { num: "01", t: "Une expérience qui transforme", b: "Au fil des années, nous avons vécu des expériences… on ne comprend pas le monde à distance." },
-  { num: "02", t: "Une aventure familiale", b: "Nous sommes une famille engagée… comprendre avant d'agir." },
+  { num: "02", t: "Un engagement associatif", b: "Nous sommes une association engagée pour la rencontre, la compréhension des réalités humaines et la construction d'actions solidaires adaptées aux besoins identifiés sur le terrain." },
   { num: "03", t: "Une autre manière d'agir", b: "Nous ne venons pas avec des réponses toutes faites… avant d'être accompagnée." },
   { num: "04", t: "Une route construite", b: "2028 en France, 2029/2030 à l'international — une trajectoire éprouvée pas à pas." },
   { num: "05", t: "Une démarche partagée", b: "Nous souhaitons associer des partenaires… une histoire vécue." },
-  { num: "06", t: "La naissance de Manus Terra", b: "Formaliser une pratique éprouvée depuis Djibouti et l'Éthiopie en une structure associative." }];
+  { num: "06", t: "La naissance de Manus Terra", b: "Des rencontres et des expériences vécues au fil des années ont progressivement nourri une réflexion, jusqu'à donner naissance à Manus Terra en 2026." }];
 
 
   return (
@@ -190,8 +190,9 @@ function ProjetSection({ setRoute, timelineVariant }) {
             <div style={{ borderLeft: "1px solid var(--rule)", paddingLeft: 28 }}>
               <p style={{ fontSize: 17, lineHeight: 1.6, margin: 0 }}>
                 Manus Terra est née d'une conviction simple : <strong style={{ color: "var(--ink)" }}>on ne comprend pas le monde à distance</strong>.
-                Là où les grandes ONG opèrent à l'échelle d'un pays, nous travaillons à l'échelle d'une famille,
-                d'un village, d'une petite communauté — pendant six à douze mois, en immersion directe.
+                Notre démarche vise à aller à la rencontre des réalités humaines, à l'échelle d'une famille,
+                d'un village ou d'une petite communauté, pour observer, comprendre et construire, lorsque cela
+                est possible, des actions adaptées.
               </p>
             </div>
           </Reveal>
@@ -320,8 +321,8 @@ function TerrainSection() {
   const projets = [
   { tag: "01 · Djibouti", lieu: "Région d'Obock", titre: "Canyon de Mêdého", txt: "Création et référencement d'un canyon désormais ouvert aux descentes encadrées.", ratio: "4 / 5", ext: "https://descente-canyon.com", src: "assets/photos/enfant-jerricane.jpg", focal: "60% 40%" },
   { tag: "02 · Djibouti", lieu: "Villages reculés", titre: "Cinéma itinérant", txt: "Sensibiliser à la gestion des déchets, projection dans des hameaux sans accès à l'écrit.", ratio: "4 / 5", src: "assets/photos/cinema-itinerant.jpg", focal: "55% 40%" },
-  { tag: "03 · Djibouti", lieu: "État djiboutien", titre: "Lancement de guides officiels", txt: "Une idée de terrain reprise par l'État trois ans plus tard, formalisée en cursus officiel.", ratio: "4 / 5", src: "assets/photos/carte-nuit.jpg", focal: "50% 50%" },
-  { tag: "04 · Éthiopie", lieu: "Région rurale", titre: "Aide au dispensaire", txt: "Soutien médical auprès d'un dispensaire en zone rurale.", ratio: "4 / 5", src: "assets/photos/soin-portrait.jpg", focal: "40% 30%" }];
+  { tag: "03 · Djibouti", lieu: "État djiboutien", titre: "Lancement de guides officiels", txt: "Une idée de terrain reprise par l'État trois ans plus tard, formalisée en cursus officiel.", ratio: "4 / 5", src: "assets/photos/carte-nuit.jpg", focal: "50% 50%" }
+];
 
   return (
     <section className="section">
@@ -330,18 +331,18 @@ function TerrainSection() {
           <Reveal>
             <div className="kicker" style={{ marginBottom: 20 }}>Le terrain · 03</div>
             <h2 className="display" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: 0 }}>
-              Quatre preuves<br /><span className="italic-serif">concrètes</span>.
+              Expériences qui ont<br /><span className="italic-serif">nourri</span> le projet.
             </h2>
           </Reveal>
           <Reveal delay={120}>
             <p style={{ fontSize: 17, lineHeight: 1.6, margin: 0, alignSelf: "end", maxWidth: 480 }}>
-              Avant d'être une association, Manus Terra est une pratique. Djibouti, Éthiopie : des projets menés sur le terrain,
-              référencés, repris, prolongés. Pas une promesse — un historique.
+              Plusieurs rencontres et initiatives, notamment à Djibouti, ont marqué notre parcours. Elles ont progressivement
+              nourri une réflexion sur la rencontre, l'entraide et la manière d'agir auprès des populations.
             </p>
           </Reveal>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
           {projets.map((p, i) =>
           <Reveal key={p.titre} delay={i * 80}>
               <Photo ratio={p.ratio} tag={p.tag} caption={p.titre} location={p.lieu} src={p.src} focal={p.focal} tone="duotone" />
@@ -515,7 +516,7 @@ function ContributionsSection() {
 // ── Famille ─────────────────────────────────────────────────────────
 function FamilleSection() {
   const people = [
-  { nm: "Angie Rabilloud", role: "Président · Responsable mécénat", txt: "Porteur du projet depuis ses premières aventures à Djibouti et en Éthiopie. Trace la route, ouvre les portes, formalise la démarche.", src: "assets/photos/portrait-angie.jpg", focal: "50% 30%" },
+  { nm: "Angie Rabilloud", role: "Président · Responsable mécénat", txt: "Porteur du projet depuis ses premières aventures à Djibouti. Trace la route, ouvre les portes, formalise la démarche.", src: "assets/photos/portrait-angie.jpg", focal: "50% 30%" },
   { nm: "Medina Rabilloud", role: "Trésorière", txt: "Tient le cap matériel et budgétaire du projet. Convertit l'élan en logistique tenable, jour après jour.", src: "assets/photos/portrait-medina.jpg", focal: "50% 30%" },
   { nm: "Frédéric Rossi", role: "Secrétaire · Agent de presse", txt: "Garant de la mémoire, des récits et de la documentation. Relie ce qui se vit sur le terrain à ce qui en restera.", src: "assets/photos/portrait-fred.jpg", focal: "50% 30%" }];
 

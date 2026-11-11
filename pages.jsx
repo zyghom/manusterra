@@ -18,15 +18,14 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 60, marginTop: 50 }}>
               <p style={{ fontSize: 18, lineHeight: 1.55, color: "var(--ink)", fontFamily: "var(--serif)", fontWeight: 300, margin: 0 }}>
                 Manus Terra est une association loi 1901 fondée en juillet 2026,
-                portée par une famille qui part vivre en base mobile pour aller à la rencontre
-                des populations à l'échelle d'une famille, d'un village, d'une petite communauté.
+                qui prépare un projet itinérant en base mobile pour aller à la rencontre
+                des populations, à l'échelle d'une famille, d'un village, d'une petite communauté.
               </p>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
-                Le projet associatif formalise une pratique éprouvée depuis Djibouti et l'Éthiopie :
-                la mise en place d'un équipement de progression dans le canyon de Médéo (référencement sur descente-canyon.com),
-                la mise en place d'un cinéma itinérant à titre culturel pour la population locale n'ayant jamais vu de projection cinématographique,
-                lancement de guides officiels auprès de l'État djiboutien.
-                Ces actions ont été une trajectoire et non une promesse.
+                Manus Terra est née de rencontres et d'expériences vécues au fil des années, notamment à Djibouti.
+                Ces expériences, parfois accompagnées d'initiatives solidaires, ont progressivement nourri une réflexion
+                sur notre manière d'aller à la rencontre des autres. Aujourd'hui, cette réflexion se poursuit à travers
+                la construction d'un projet associatif fondé sur l'observation, la compréhension et l'action.
               </p>
             </div>
           </Reveal>
@@ -35,9 +34,9 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
             <div style={{ marginTop: 40, padding: "28px 32px", background: "var(--paper-deep)", border: "1px solid var(--rule)", borderLeft: "3px solid var(--terracotta)" }}>
               <div className="eyebrow" style={{ marginBottom: 8, color: "var(--terracotta-d)" }}>Base mobile</div>
               <p style={{ margin: 0, fontSize: 15, lineHeight: 1.65 }}>
-                Notre base mobile est un véhicule aménagé pour vivre et travailler sur le terrain en autonomie complète :
+                Notre base mobile sera un véhicule aménagé pour vivre et travailler sur le terrain en autonomie complète :
                 énergie solaire, réserves d'eau, espace de vie et de travail, matériel d'observation et de documentation.
-                Elle nous permet de nous installer au plus près des communautés, sans infrastructure lourde.
+                Elle nous permettra de nous installer au plus près des communautés, sans infrastructure lourde.
               </p>
             </div>
           </Reveal>
@@ -71,11 +70,11 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
           <div style={{ display: "grid", gap: 0 }}>
             {[
               { n: "01", t: "Une expérience qui transforme", lead: "On ne comprend pas le monde à distance.", b: "Au fil des années, nous avons vécu des expériences qui ont changé notre regard. Le terrain nous a appris ce qu'aucun rapport ne raconte : la rencontre, l'écoute, l'humilité." },
-              { n: "02", t: "Une aventure familiale", lead: "Comprendre avant d'agir.", b: "Nous sommes une famille engagée. Vivre ensemble cette aventure, c'est aussi tenir un engagement dans la durée — et le partager au-delà du foyer." },
-              { n: "03", t: "Une autre manière d'agir", lead: "Pas de réponses toutes faites.", b: "Nous arrivons en facilitateurs, jamais en sauveurs. Une solution se construit avec, jamais pour. Elle se nomme avec ceux qu'elle concerne, et se construit — avant d'être accompagnée." },
+              { n: "02", t: "Une aventure associative", lead: "Comprendre avant d'agir.", b: "Nous sommes une association engagée. C'est aussi tenir un engagement dans la durée, et le partager." },
+              { n: "03", t: "Une autre manière d'agir", lead: "Pas de réponses toutes faites.", b: "Nous souhaitons adopter une posture de facilitateurs, en construisant les actions avec les personnes concernées." },
               { n: "04", t: "Une route construite", lead: "2028 France · 2029 / 2030 vers l'international.", b: "Une trajectoire posée : expérimenter d'abord, en France, dans une langue et un cadre connus. Déployer ensuite, ailleurs, avec une base solide et des partenaires identifiés." },
               { n: "05", t: "Une démarche partagée", lead: "Une histoire vécue.", b: "Nous souhaitons associer des partenaires — mécènes, entreprises, fondations — non pas comme financeurs invisibles, mais comme témoins et compagnons d'une histoire qui se vit." },
-              { n: "06", t: "La naissance de Manus Terra", lead: "Main et terre, en latin.", b: "Le projet associatif formalise ce que nous faisions déjà. Une structure, des statuts, un cadre — pour rendre lisible et durable une pratique née sur le terrain." },
+              { n: "06", t: "La naissance de Manus Terra", lead: "Des expériences qui ouvrent de nouvelles perspectives.", b: "En 2026, cette évolution a donné naissance à Manus Terra, une association porteuse d'un nouveau projet, aujourd'hui en construction." },
             ].map((bl, i) => (
               <Reveal key={bl.n} delay={i * 50}
                 style={{
@@ -121,47 +120,35 @@ function PageProjet({ setRoute, onMecene, tweaks }) {
             <Reveal>
               <div className="kicker" style={{ marginBottom: 18 }}>Preuves de terrain</div>
               <h2 className="display" style={{ fontSize: "clamp(34px, 4vw, 52px)", margin: 0 }}>
-                Djibouti, <span className="italic-serif">Éthiopie</span>.
+                <span className="italic-serif">Djibouti</span>.
               </h2>
             </Reveal>
             <Reveal delay={120}>
               <p style={{ fontSize: 16, lineHeight: 1.6, alignSelf: "end", margin: 0 }}>
-                Avant l'association, des années de présence. Quatre projets documentés, dont un canyon
-                aujourd'hui référencé internationalement.
+                Aujourd'hui, Manus Terra ne présente pas les expériences passées comme ses propres réalisations :
+                elle s'en nourrit pour construire une démarche nouvelle.
               </p>
             </Reveal>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 28 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
             <Photo
-              src="assets/photos/enfant-jerricane.jpg"
+              src="assets/photos/cinema-itinerant.jpg"
               ratio="4 / 3"
-              tag="01 · Djibouti — Obock"
-              caption="Canyon de Mêdého — descente-canyon.com"
-              location="2007-2008"
-              focal="50% 45%"
+              tag="Djibouti"
+              caption="Cinéma itinérant"
+              location="villages reculés"
+              focal="55% 50%"
               tone="duotone"
             />
-            <div style={{ display: "grid", gap: 28 }}>
-              <Photo
-                src="assets/photos/cinema-itinerant.jpg"
-                ratio="16 / 10"
-                tag="02 · Djibouti"
-                caption="Cinéma itinérant"
-                location="villages reculés"
-                focal="55% 50%"
-                tone="duotone"
-              />
-              <Photo
-                src="assets/photos/soin-portrait.jpg"
-                ratio="16 / 10"
-                tag="03 · Éthiopie"
-                caption="Aide au dispensaire"
-                location="région rurale"
-                focal="40% 30%"
-                tone="duotone"
-              />
-            </div>
+            <Photo
+              src="assets/photos/soin-portrait.jpg"
+              ratio="4 / 3"
+              tag="Archives"
+              caption="La rencontre"
+              focal="40% 30%"
+              tone="duotone"
+            />
           </div>
 
         </div>

@@ -167,7 +167,7 @@ function PageDon({ setRoute, onMecene }) {
             <Photo
               src="assets/photos/rencontre-village.jpg"
               ratio="21 / 9"
-              tag="Archives · Éthiopie"
+              tag="Archives"
               caption="Le terrain, déjà éprouvé"
               location="2014"
               focal="50% 40%"
@@ -188,7 +188,7 @@ function PageDon({ setRoute, onMecene }) {
           <Reveal delay={80}>
             <div style={{ display: "grid", gap: 14 }}>
               {[
-                ["Angie Rabilloud", "Président · Fondateur", "Porteur du projet depuis ses premières aventures à Djibouti et en Éthiopie."],
+                ["Angie Rabilloud", "Président · Fondateur", "Porteur du projet depuis ses premières aventures à Djibouti."],
                 ["Medina Rabilloud", "Trésorière", "Tient le cap matériel et budgétaire. Logistique tenable, jour après jour."],
                 ["Frédéric Rossi", "Secrétaire", "Garant de la mémoire, des récits, de la documentation."],
               ].map(([nm, role, txt]) => (

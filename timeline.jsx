@@ -42,7 +42,7 @@ function TimelineHorizon() {
             Déployer avec <span className="italic-serif">une base</span><br/>solide
           </h3>
           <p style={{ maxWidth: 380, marginLeft: "auto" }}>
-            Partir avec une expérience concrète et des partenaires locaux identifiés, dans la continuité de Djibouti et de l'Éthiopie.
+            Partir avec une expérience concrète et des partenaires locaux identifiés, dans la continuité des expériences vécues à Djibouti.
           </p>
         </div>
       </div>
@@ -105,7 +105,7 @@ function TimelineCompass() {
     { year: "2026", title: "Naissance de l'association", note: "Statuts déposés, bureau constitué.", accent: "var(--ink)" },
     { year: "2027", title: "Préparation", note: "Aménagement du base mobile, identification des premiers territoires, recherche de mécènes.", accent: "var(--ochre)" },
     { year: "2028", title: "Expérimentation en France", note: "Déplacement, immersion dans des territoires isolés, ajustement de la démarche.", accent: "var(--terracotta)" },
-    { year: "2029-2030", title: "Déploiement international", note: "Premiers terrains hors France, dans le sillage de Djibouti et de l'Éthiopie.", accent: "var(--dust-blue)" },
+    { year: "2029-2030", title: "Déploiement international", note: "Premiers terrains hors France, dans le sillage des expériences vécues à Djibouti.", accent: "var(--dust-blue)" },
   ];
   return (
     <div style={{ display: "grid", gap: 0, position: "relative", padding: "20px 0" }}>

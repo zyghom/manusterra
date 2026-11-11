@@ -12,13 +12,18 @@ function PageMaintenance() {
     <div className="mnt">
       <div className="mnt-inner">
         <img className="mnt-logo" src="assets/logo-mark.svg" alt="" aria-hidden="true" />
-        <div className="eyebrow">Site en construction</div>
+        <div className="eyebrow">Notre association prend forme</div>
         <h1 className="display mnt-title">
           Manus<span className="italic-serif"> Terra</span>
         </h1>
+        <p className="mnt-sub">Aller à la rencontre des réalités humaines</p>
         <p className="mnt-lead">
-          Notre nouveau site prend forme. En attendant, suivez la préparation de nos
-          premières immersions sur nos réseaux, ou écrivez-nous.
+          Née de rencontres et d'expériences humaines, Manus Terra construit aujourd'hui un projet
+          associatif itinérant fondé sur une démarche simple : observer, comprendre, agir.
+        </p>
+        <p className="mnt-lead">
+          Notre site évolue actuellement pour mieux vous présenter notre histoire, notre démarche
+          et les prochaines étapes du projet. À très bientôt pour la suite de l'aventure !
         </p>
 
         <ul className="mnt-links">
@@ -29,7 +34,10 @@ function PageMaintenance() {
           ))}
         </ul>
 
-        <a className="mnt-mail" href="mailto:assomanusterra@gmail.com">assomanusterra@gmail.com</a>
+        <p className="mnt-contact">
+          Pour nous contacter :{" "}
+          <a className="mnt-mail" href="mailto:assomanusterra@gmail.com">assomanusterra@gmail.com</a>
+        </p>
       </div>
 
       <footer className="mnt-foot">

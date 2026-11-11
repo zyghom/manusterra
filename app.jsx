@@ -4,8 +4,11 @@ const { useState: useStateA, useEffect: useEffectA } = React;
 
 // Mode construction : true = page d'attente pour tous les visiteurs, false = site complet.
 // Même en mode construction, ajouter ?apercu à l'URL affiche le site complet.
+// Le mode construction ne s'applique qu'au domaine public : les URL de dev
+// (vercel.app, localhost) affichent toujours le site complet.
 const MAINTENANCE = true;
-const APERCU = new URLSearchParams(window.location.search).has("apercu");
+const DOMAINE_PUBLIC = /(^|\.)manusterra\.fr$/.test(window.location.hostname);
+const APERCU = !DOMAINE_PUBLIC || new URLSearchParams(window.location.search).has("apercu");
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "timeline": "compass"
