@@ -104,7 +104,8 @@ function PageRGPD({ setRoute }) {
               <h2 className="serif" style={{ fontSize: 24, fontWeight: 400, margin: "0 0 12px" }}>Données collectées</h2>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
                 Les seules données personnelles collectées sur ce site sont celles que vous communiquez
-                volontairement via le formulaire de contact : nom, adresse email et contenu de votre message.
+                volontairement via le formulaire de contact (nom, adresse email et contenu de votre message)
+                et via l'inscription à la lettre d'information (adresse email).
                 Aucune donnée n'est collectée automatiquement (pas de cookies, pas d'outils d'analyse).
               </p>
             </div>
@@ -112,7 +113,8 @@ function PageRGPD({ setRoute }) {
             <div>
               <h2 className="serif" style={{ fontSize: 24, fontWeight: 400, margin: "0 0 12px" }}>Finalité du traitement</h2>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
-                Vos données sont utilisées exclusivement pour répondre à votre demande de contact.
+                Vos données sont utilisées exclusivement pour répondre à votre demande de contact
+                et, si vous vous êtes inscrit, pour vous envoyer la lettre d'information de l'association.
                 Elles ne sont jamais transmises à des tiers, jamais utilisées à des fins commerciales
                 et ne font l'objet d'aucun profilage.
               </p>
@@ -122,7 +124,7 @@ function PageRGPD({ setRoute }) {
               <h2 className="serif" style={{ fontSize: 24, fontWeight: 400, margin: "0 0 12px" }}>Base légale</h2>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
                 Le traitement repose sur votre consentement (article 6.1.a du RGPD),
-                exprimé par la validation du formulaire de contact.
+                exprimé par la validation du formulaire de contact ou de l'inscription à la lettre d'information.
               </p>
             </div>
 
@@ -130,7 +132,8 @@ function PageRGPD({ setRoute }) {
               <h2 className="serif" style={{ fontSize: 24, fontWeight: 400, margin: "0 0 12px" }}>Durée de conservation</h2>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
                 Vos données sont conservées le temps nécessaire au traitement de votre demande,
-                puis supprimées dans un délai maximum de 12 mois.
+                puis supprimées dans un délai maximum de 12 mois. L'adresse d'un abonné à la lettre
+                d'information est conservée jusqu'à sa désinscription, possible à tout moment sur simple demande.
               </p>
             </div>
 
