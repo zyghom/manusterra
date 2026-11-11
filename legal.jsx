@@ -66,8 +66,9 @@ function PageMentions({ setRoute }) {
             <div>
               <h2 className="serif" style={{ fontSize: 24, fontWeight: 400, margin: "0 0 12px" }}>Cookies</h2>
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
-                Ce site n'utilise aucun cookie de traçage, cookie publicitaire ou outil d'analyse tiers.
-                Aucune donnée de navigation n'est collectée.
+                Ce site n'utilise aucun cookie, ni de traçage ni publicitaire. Pour mesurer sa fréquentation,
+                il utilise Vercel Web Analytics, un outil sans cookie qui produit des statistiques anonymes
+                et agrégées (pages vues, pays, type d'appareil, site d'origine), sans identifier les visiteurs.
               </p>
             </div>
           </div>
@@ -105,7 +106,9 @@ function PageRGPD({ setRoute }) {
               <p style={{ fontSize: 15, lineHeight: 1.65, margin: 0 }}>
                 Les seules données personnelles collectées sur ce site sont celles que vous communiquez
                 volontairement via le formulaire de contact : nom, adresse email et contenu de votre message.
-                Aucune donnée n'est collectée automatiquement (pas de cookies, pas d'outils d'analyse).
+                Aucun cookie n'est déposé. La fréquentation du site est mesurée avec Vercel Web Analytics,
+                sous forme de statistiques anonymes et agrégées : aucune donnée ne permet de vous identifier
+                ni de suivre votre navigation d'un site à l'autre.
               </p>
             </div>
 
